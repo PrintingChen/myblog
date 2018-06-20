@@ -2,7 +2,7 @@ var path = require('path')
 var express = require('express')
 var app = express()
 var indexRouter = require('./routes/index')
-var usersRouter = require('./routes/users')
+// var usersRouter = require('./routes/users')
 
 app.set('views', path.join(__dirname, 'views')) //设置存放模板文件的目录
 app.set('view engine', 'ejs') //设置模板引擎为ejs
@@ -16,10 +16,10 @@ app.get('/users/:name', function(req, res){
 */
 
 app.use('/', indexRouter)
-app.use('/users', usersRouter)
+// app.use('/users', usersRouter)
 
 
-
-app.listen(8888, function(){
-	console.log('server running 8888.')
+let port = 8300
+app.listen(port, function(){
+	console.log('server running '+port)
 })
